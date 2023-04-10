@@ -1,0 +1,5 @@
+Signy 17 0.2 1
+Hera 2 9.1 1
+Gudrun 5 11.8 0
+Annabelle 14 0.9 1
+Bree 12 0.0 0
