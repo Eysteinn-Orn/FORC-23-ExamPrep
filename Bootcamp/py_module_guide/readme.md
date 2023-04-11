@@ -51,7 +51,10 @@ vector<int> most_significant_digits(vector<int> nums) {
     // function implementation
 }
 
-PYBIND11_MODULE(digit_module, m) {
+PYBIND11_MODULE(
+    digit_module, // the module name
+    m
+) {
     m.def(
         // what the function should be called in the python module
         "get_most_significant_digit_for_integers", 

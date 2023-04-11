@@ -1,32 +1,26 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
+#include <iostream>
 #include <vector>
-
-using namespace std;
 
 int most_significant_digit(int n) {
     while(n >= 10) {
-        n /= 10;
+        n/= 10;
     }
     return n;
 }
 
-vector<int> most_significant_digits(vector<int> nums) {
-    vector<int> result;
-
-    for(int n: nums) {
-        result.push_back(
-            most_significant_digit(n)
-        );
+std::vector<int> get_most_significant_digit_for_integers(std::vector<int> numbers) {
+    std::vector<int> digits;
+    for(auto &n: numbers) {
+        digits.push_back(most_significant_digit(n));
     }
 
-    return result;
+    return digits;
 }
 
-PYBIND11_MODULE(
-    digit_module, // replace digit_module with the module name
-    m
-) {
+
+PYBIND11_MODULE(digit_module, m) {
 
     // add functions like this
     m.def(
@@ -35,7 +29,7 @@ PYBIND11_MODULE(
         "get_most_significant_digit_for_integers", 
 
         // pointer to your c++ function
-        &most_significant_digits, 
+        &get_most_significant_digit_for_integers, 
 
         // description of the function
         "Get most significant digits"
