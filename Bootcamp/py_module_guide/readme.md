@@ -15,6 +15,10 @@ Activate it:
 source .venv/bin/activate
 ```
 
+```cmd
+.venv\Scripts\activate.bat
+```
+
 Install pybind11:
 ```bash
 pip install pybind11
